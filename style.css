@@ -2,16 +2,41 @@
   margin: 0;
   padding: 0;
   font-family: monospace;
+  
 }
 
 .title {
+  
   margin-left: 20px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 16px;
 }
+.title1 {
+  
+  margin-left: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 16px;
+}
+table {
+  border-collapse: collapse;  
+  text-align: center;
 }
 
+th {
+  font-weight: normal;
+  color: #039;
+  padding: 10px 15px;
+}
+td {
+  color: #669;
+  border-top: 1px solid #e8edff;
+  padding: 10px 15px;
+}
+tr:nth-child(2n) {
+  background: #e8edff;
+}
 .header {
+  
   list-style: none;
   background-color: rgb(41, 158, 103);
   height: 70px;
@@ -20,31 +45,61 @@
   align-items: center;
   padding: 0px 20px;
 }
-.main {
+.main1 { 
+   justify-content: center;
   list-style: none;
   background-color: rgb(41, 158, 103);
   height: 70px;
   display: flex;
-  justify-content: center;
+ 
   }
-.main li {
+.main1 li {
+  
   display: inline-block;
   position: relative;
   }
-.main li a {
+ 
+.main1 li a { 
+
   display: block;
   padding: 24px 25px;
-  color: white;
+  color: rgb(255, 255, 255);
   text-decoration: none;
   text-align: center;
   font-size: 18px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
+  .main { 
+    justify-content: center;
+   list-style: none;
+   background-color: rgb(41, 158, 103);
+   height: 70px;
+   display: flex;
+  
+   }
+ .main li {
+   
+   display: inline-block;
+   position: relative;
+   }
+  
+ .main li a { 
+ 
+   display: block;
+   padding: 24px 70px;
+   color: rgb(255, 255, 255);
+   text-decoration: none;
+   text-align: center;
+   font-size: 18px;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   }
 .navigation {
   float: right;
   height: 100%;
+  
 }
 .navigation li ul{
+ 
   height: 100%;
   display: table;
   float: left;
@@ -77,4 +132,10 @@ ul li:hover ul.dropdown {
     margin: 0 auto;
     background:rgb(41, 158, 103);
     height: 100%;
+
+  list-style: none;
+ 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   }
