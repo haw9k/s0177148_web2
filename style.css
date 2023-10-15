@@ -29,7 +29,7 @@ th {
 }
 td {
   color: #669;
-  border-top: 1px solid #e8edff;
+  border-top: 1px solid #000000;
   padding: 10px 15px;
 }
 tr:nth-child(2n) {
