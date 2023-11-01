@@ -1,0 +1,87 @@
+import java.util.*;
+class Book {
+    String name;
+    String author;
+    int pages;
+    int year;
+    Book(String name, String author,int pages, int year){
+        this.name=name;
+        this.author=author;
+        this.year=year;
+        this.pages=pages;
+    }
+    public String toString(){
+        return"название книги: "+name+"\n автор книги: "+author+"\n количество страниц: "+pages+"\n год выпуска: "+year;
+    }
+    String getName(){
+        return name;
+    }
+    String getAuthor(){
+        return author;
+    }
+    int getPages(){
+        return pages;
+    }
+    int getYear(){
+        return year;
+    }
+    void setName(String name){
+        this.name=name;
+    }
+    void setYear(int year){
+        this.year=year;
+    }
+    void setAuthor(String author){
+        this.author=author;
+    }
+    void setPages(int pages){
+        this.pages=pages;
+    }
+
+
+
+}
+ class Lib_Book extends Book{
+    private String lib_code;
+    Lib_Book(String name,String author,int pages, int year,String lib_code){
+        super(name,author,pages,year);
+        this.lib_code=lib_code;
+    }
+    String getLib_code(){
+        return lib_code;
+    }
+    String Bibl_code(String lib_code){
+        return lib_code;
+    }
+    public String toString(){
+        return super.toString()+"\n библиотечный код: "+lib_code;
+    }
+
+}
+
+import java.util.Scanner;
+public class ExtendsBook {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите данные о книге");
+        System.out.println("Введите название книги");
+        String name = sc.nextLine();
+        System.out.println("Введите автора книги");
+        String author = sc.nextLine();
+        System.out.println("Введите количество страниц");
+        int pages = sc.nextInt();
+        System.out.println("Введите год выпуска книги");
+        int year = sc.nextInt();
+
+        Book b = new Book(name, author, pages, year);
+        System.out.println("Дданные о книге");
+        System.out.println(b.toString());
+        String q = sc.nextLine();
+        System.out.println("Введите библиотечный код книги");
+        String lib_code = sc.nextLine();
+
+        Lib_Book lb = new Lib_Book(name, author, pages, year, lib_code);
+        System.out.println("Дданные о  библиотечной книге");
+        System.out.println(lb.toString());
+    }
+}
