@@ -1,0 +1,89 @@
+public interface Progressia{
+    double j_element();
+    double summa();
+    void print();
+}
+public class Arifmeticheskaya_Progressia implements Progressia {
+    int j;
+    double step;
+    double a1;
+    Arifmeticheskaya_Progressia(double a1,double step, int j){
+        this.a1=a1;
+        this.step=step;
+        this.j=j;
+    }
+    public double j_element(){
+     return a1+(j-1)*step;
+    }
+
+    public double summa(){
+        return (a1+(a1+(j-1)*step))*j/2;
+    }
+    public void print(){
+        System.out.println("Арифметическая прогрессия: a1= "+a1+" step= "+step+" j= "+j);
+    }
+
+}
+public class Geometricheskaya_Progressia implements Progressia{
+  double b1;
+  double q;
+  int j;
+  Geometricheskaya_Progressia(double b1,double q, int j){
+      this.b1=b1;
+      this.q=q;
+      this.j=j;
+  }
+  public double j_element(){
+
+      return b1 * Math.pow(q, j - 1);
+  }
+
+  public double summa(){
+      return b1*(Math.pow(q,j)-1)/(q-1);
+  }
+  public void print(){
+      System.out.println("Геометрическая прогрессия: b1= "+b1+" q= "+q+" j= "+j);
+
+  }
+
+}
+import java.util.Scanner;
+public class InterfaceProgressia {
+    public static void main(String[] args){
+        Progressia [] p;
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Введите количество последовательности: ");
+        int n=sc.nextInt();
+        p=new Progressia[n];
+        for(int i=0;i<n;i++){
+            System.out.println("1-арифметическая прогрессия, 2-геометрическая прогрессиия");
+            int k=sc.nextInt();
+            if (k==1){
+                System.out.println("Введите 1-ый элемент последовательности: ");
+                double a1=sc.nextDouble();
+                System.out.println("Введите шаг последовательности: ");
+                double step=sc.nextDouble();
+                System.out.println("Введите j(индекс элемента): ");
+                int j=sc.nextInt();
+                Arifmeticheskaya_Progressia arifmeticheskayaProgressia= new Arifmeticheskaya_Progressia(a1,step,j);
+                p[i]=arifmeticheskayaProgressia;}
+
+            if (k==2){
+                System.out.println("Введите 1-ый элемент последовательности: ");
+                double b1=sc.nextDouble();
+                System.out.println("Введите знаменатель геометрической прогрессии последовательности(не равный 1): ");
+                double step=sc.nextDouble();
+                System.out.println("Введите j(индекс элемента): ");
+                int j=sc.nextInt();
+                Geometricheskaya_Progressia geometricheskayaProgressia=new Geometricheskaya_Progressia(b1,step,j);
+                p[i]=geometricheskayaProgressia;
+            }
+    }
+            for(int i=0;i<n;i++){
+                p[i].print();
+                System.out.println("j-ый элемент= "+p[i].j_element()+" сумма прогрессии Sj= "+p[i].summa());
+
+            }
+
+        }
+}
